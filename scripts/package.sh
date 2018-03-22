@@ -5,6 +5,11 @@ echo -e "\033[31m ================================================= \033[0m"
 
 # yum -y install apache-maven
 cd ../
-mvn clean package -Dmaven.test.skip=true
+profileActive=dev
+if [ -n "$1" ]; then
+profileActive=$1
+echo "参数：$1"
+fi
+mvn clean package -Dmaven.test.skip=true -P $profileActive
 ls target/
 
