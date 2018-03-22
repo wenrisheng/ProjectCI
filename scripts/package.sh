@@ -8,9 +8,11 @@ cd ../
 profileActive=dev
 if [ -n "$1" ]; then
 profileActive=$1
-echo "参数：$1"
 fi
-packageCMD="mvn clean package -Dmaven.test.skip=true -P ${profileActive}"
+packageCMD="mvn clean package"
+packageCMD=${packageCMD}" -Dmaven.test.skip=true"
+packageCMD=${packageCMD}" -P ${profileActive}"
+packageCMD=${packageCMD}" > /dev/null"
 echo -e "\033[31m ${packageCMD} \033[0m"
 eval $packageCMD
 ls target/
