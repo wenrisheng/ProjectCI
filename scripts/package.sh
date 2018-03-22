@@ -10,6 +10,8 @@ if [ -n "$1" ]; then
 profileActive=$1
 echo "参数：$1"
 fi
-mvn clean package -Dmaven.test.skip=true -P $profileActive
+packageCMD="mvn clean package -Dmaven.test.skip=true -P ${profileActive}"
+echo -e "\033[31m ${packageCMD} \033[0m"
+eval $packageCMD
 ls target/
 
