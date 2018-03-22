@@ -16,4 +16,5 @@ packageCMD=${packageCMD}" > /dev/null"
 echo -e "\033[31m ${packageCMD} \033[0m"
 eval $packageCMD
 ls target/
+sh scripts/upload.sh
 

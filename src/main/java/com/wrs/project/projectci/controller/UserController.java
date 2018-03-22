@@ -10,10 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
 	@RequestMapping("/login")
-public Map<String, Object> login(String account, String pwd) {
-	Map<String, Object> result = new HashMap<>();
-	result.put("account", account);
-	result.put("pwd", pwd);
-	return result;
-}
+	public Map<String, Object> login(String account, String pwd) {
+		Map<String, Object> result = new HashMap<>();
+		result.put("account", account);
+		result.put("pwd", pwd);
+		return result;
+	}
+
+	@RequestMapping("/register")
+	public Map<String, Object> register(String account, String pwd) {
+		Map<String, Object> result = new HashMap<>();
+		result.put("account", account);
+		result.put("pwd", pwd);
+		return result;
+	}
 }
